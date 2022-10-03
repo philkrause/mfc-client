@@ -1,10 +1,10 @@
 FROM node:16.15.0-alpine
 
-COPY . /app
+COPY . .
 
-WORKDIR /app
+WORKDIR .
 
 RUN npm install
 
-CMD["npm", "start"]
+CMD ["npm", "start"]
 

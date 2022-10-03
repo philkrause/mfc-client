@@ -118,6 +118,8 @@ export default function Data() {
   })
 
 
+  const key = process.env.REACT_APP_API_KEY
+  const token = process.env.REACT_APP_MAP_BOX_TOKEN
 
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(true)
@@ -131,7 +133,7 @@ export default function Data() {
         url: 'https://adsbexchange-com1.p.rapidapi.com/mil/',
         headers: {
           'X-RapidAPI-Host': 'adsbexchange-com1.p.rapidapi.com',
-          'X-RapidAPI-Key': 'fbd6ba527bmsha3e7a0dc93136f2p1915dejsnc0ffb99db3c0'
+          'X-RapidAPI-Key': key
         }
       }
     ).then(resp => {
@@ -198,7 +200,7 @@ export default function Data() {
         <>
           <ReactMapGL
             {...viewport}
-            mapboxApiAccessToken={'pk.eyJ1IjoiZGRqYW5nbyIsImEiOiJjanh1bGoxbGExNmxnM21udmxlZDE0ZXd1In0.bJagpDIel0t0x73k748YtQ'}
+            mapboxApiAccessToken={token}
             mapStyle='mapbox://styles/ddjango/cjy5w2fle12rc1dp6ibud3rtw'
             onViewportChange={viewport => {
               setViewPort(viewport)
